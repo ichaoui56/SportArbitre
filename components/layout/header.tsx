@@ -18,11 +18,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
+      setIsScrolled(window.scrollY > 10)
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -44,7 +40,7 @@ export default function Header() {
     <header
       className={`sticky top-0 z-50 mx-auto transition-all duration-200 ${
         isScrolled
-          ? "bg-background/95 w-1/2 rounded-b-xl mt-5 mx-auto backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b"
+          ? "bg-background/95 w-full lg:w-1/2 rounded-b-xl mt-5 mx-auto backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b"
           : "bg-background w-full"
       }`}
     >
@@ -55,9 +51,9 @@ export default function Header() {
               <Image 
                 src={isDark ? logoDark : logo} 
                 alt="Logo" 
-                width={200} 
-                height={200} 
-                className="mr-2" 
+                width={isScrolled ? 150 : 200} 
+                height={isScrolled ? 150 : 200} 
+                className="mr-2 transition-all duration-200"
               />
             </Link>
           </div>
@@ -76,12 +72,11 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-          <div className="hidden md:flex">
+          <div className="hidden ml-10 mt-2 md:flex">
             <ThemeToggle onThemeChange={setIsDark} /> 
           </div>
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
-            <ThemeToggle onThemeChange={setIsDark} /> 
             <button
               type="button"
               className="ml-2 text-muted-foreground hover:text-foreground"
@@ -111,6 +106,9 @@ export default function Header() {
                   {link.name}
                 </Link>
               ))}
+              <div className="flex justify-center mt-4">
+                <ThemeToggle onThemeChange={setIsDark} />
+              </div>
             </nav>
           </div>
         </div>

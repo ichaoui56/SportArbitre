@@ -11,6 +11,13 @@ interface ContactFormProps {
   handleSubmit: (e: React.FormEvent) => void
 }
 
+/**
+ * Formulaire de contact.
+ * Ce composant permet aux utilisateurs de :
+ * - Saisir leur nom, email et message.
+ * - Soumettre le formulaire pour contacter l'équipe.
+ * - Afficher un état de soumission (en cours ou réussi).
+ */
 export default function ContactForm({
   formData,
   setFormData,
@@ -18,6 +25,7 @@ export default function ContactForm({
   isSubmitted,
   handleSubmit,
 }: ContactFormProps) {
+  // Gère les changements dans les champs du formulaire
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData({ ...formData, [name]: value })
@@ -28,6 +36,7 @@ export default function ContactForm({
       <h3 className="text-2xl font-bold mb-6">Envoyez-nous un message</h3>
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 gap-6">
+          {/* Champ pour le nom */}
           <div>
             <label htmlFor="name" className="block mb-2 font-medium">
               Nom
@@ -43,6 +52,8 @@ export default function ContactForm({
               required
             />
           </div>
+
+          {/* Champ pour l'email */}
           <div>
             <label htmlFor="email" className="block mb-2 font-medium">
               Email
@@ -58,6 +69,8 @@ export default function ContactForm({
               required
             />
           </div>
+
+          {/* Champ pour le message */}
           <div>
             <label htmlFor="message" className="block mb-2 font-medium">
               Message
@@ -73,6 +86,8 @@ export default function ContactForm({
               required
             />
           </div>
+
+          {/* Bouton de soumission */}
           <div>
             <button
               type="submit"
@@ -87,4 +102,3 @@ export default function ContactForm({
     </div>
   )
 }
-

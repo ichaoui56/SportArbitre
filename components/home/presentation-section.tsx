@@ -1,7 +1,13 @@
+/**
+ * Section de présentation.
+ * Cette section décrit la mission et les caractéristiques de la chambre arbitrale du sport,
+ * avec des cartes interactives pour mettre en avant ses valeurs.
+ */
 export default function PresentationSection() {
   return (
     <section className="py-16">
       <div className="container">
+        {/* Titre et description de la section */}
         <div className="section-title">
           <h2>À propos de la Chambre Arbitrale du Sport</h2>
           <p>
@@ -9,7 +15,9 @@ export default function PresentationSection() {
           </p>
         </div>
 
+        {/* Contenu et cartes interactives */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* Texte de présentation */}
           <div>
             <p className="text-muted-foreground mb-6">
               La chambre arbitrale du sport a pour mission de trancher les litiges opposant les sportifs, clubs et fédérations, évitant ainsi le recours systématique aux tribunaux ordinaires.
@@ -18,6 +26,8 @@ export default function PresentationSection() {
               Conformément à l’article 44 de la loi n° 30-09 relative à l'éducation physique et aux sports, elle offre un arbitrage spécialisé dans le respect des réglementations en vigueur.
             </p>
           </div>
+
+          {/* Cartes interactives */}
           <div className="grid grid-cols-2 gap-4">
             <div className="card hover:translate-y-[-5px]">
               <h3 className="text-xl font-bold text-center mb-2">Indépendance</h3>

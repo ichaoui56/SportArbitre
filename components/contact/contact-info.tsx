@@ -1,8 +1,15 @@
 import { Mail, Phone, MapPin } from "lucide-react"
 
+/**
+ * Section des informations de contact.
+ * Cette section affiche :
+ * - Les coordonnées de contact (email, téléphone, adresse).
+ * - Les heures d'ouverture.
+ */
 export default function ContactInfo() {
   return (
     <div className="space-y-8">
+      {/* Titre et description */}
       <div>
         <h3 className="text-2xl font-bold mb-4">Informations de contact</h3>
         <p className="text-muted-foreground mb-8">
@@ -11,7 +18,9 @@ export default function ContactInfo() {
         </p>
       </div>
 
+      {/* Coordonnées de contact */}
       <div className="space-y-6">
+        {/* Email */}
         <div className="flex items-start gap-4">
           <div className="rounded-full bg-primary/10 p-3">
             <Mail className="h-5 w-5 text-primary" />
@@ -22,6 +31,7 @@ export default function ContactInfo() {
           </div>
         </div>
 
+        {/* Téléphone */}
         <div className="flex items-start gap-4">
           <div className="rounded-full bg-primary/10 p-3">
             <Phone className="h-5 w-5 text-primary" />
@@ -32,6 +42,7 @@ export default function ContactInfo() {
           </div>
         </div>
 
+        {/* Adresse */}
         <div className="flex items-start gap-4">
           <div className="rounded-full bg-primary/10 p-3">
             <MapPin className="h-5 w-5 text-primary" />
@@ -46,6 +57,7 @@ export default function ContactInfo() {
         </div>
       </div>
 
+      {/* Heures d'ouverture */}
       <div className="card hover:shadow-lg mt-8 bg-muted">
         <h4 className="font-bold mb-2">Heures d'ouverture</h4>
         <p className="text-muted-foreground mb-2">Lundi - Vendredi: 9h00 - 18h00</p>
@@ -54,4 +66,3 @@ export default function ContactInfo() {
     </div>
   )
 }
-

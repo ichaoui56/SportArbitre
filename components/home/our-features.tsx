@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
+// Liste des fonctionnalités
 const features = [
   {
     title: "Indépendance Juridictionnelle",
@@ -20,10 +21,16 @@ const features = [
   },
 ]
 
+/**
+ * Section des fonctionnalités.
+ * Cette section présente les principales caractéristiques de la chambre arbitrale du sport,
+ * accompagnées d'une illustration.
+ */
 export default function OurFeatures() {
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
+        {/* Titre et description de la section */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">La Chambre Arbitrale du Sport</h2>
           <p className="max-w-2xl mx-auto">
@@ -31,7 +38,9 @@ export default function OurFeatures() {
           </p>
         </div>
 
+        {/* Grille des fonctionnalités et illustration */}
         <div className="grid md:grid-cols-2 gap-1 items-center">
+          {/* Illustration */}
           <div>
             <Image
               src="https://www.cnom.org.ma/sites/default/files/inline-images/WhatsApp%20Image%202018-12-19%20at%2021.27.57.jpeg"
@@ -42,6 +51,7 @@ export default function OurFeatures() {
             />
           </div>
 
+          {/* Liste des fonctionnalités */}
           <div className="space-y-8">
             {features.map((feature, index) => (
               <div key={index}>
@@ -58,4 +68,3 @@ export default function OurFeatures() {
     </section>
   )
 }
-

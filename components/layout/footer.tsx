@@ -46,13 +46,13 @@ export default function Footer() {
             </Link>
           </div>
 
-          <div className="w-full md:w-auto max-w-md">
+          <div className="w-[300px] max-w-lg">
             <h3 className="text-lg font-semibold mb-3">Restez informé</h3>
             <form onSubmit={handleSubscribe} className="flex gap-2">
               <Input
                 type="email"
                 placeholder="Votre email"
-                className="max-w-xs"
+                className="max-w-sm"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required

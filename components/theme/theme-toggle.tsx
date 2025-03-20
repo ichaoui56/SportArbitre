@@ -2,6 +2,10 @@
 
 import { useEffect, useState } from "react"
 
+/**
+ * Composant `ThemeToggle` :
+ * Ce composant permet de basculer entre les thèmes sombre et clair. Il utilise `localStorage` pour sauvegarder la préférence de l'utilisateur.
+ */
 export default function ThemeToggle({ onThemeChange }: { onThemeChange: (isDark: boolean) => void }) {
   const [isDark, setIsDark] = useState(false)
 

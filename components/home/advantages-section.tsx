@@ -1,6 +1,12 @@
 import { Check } from "lucide-react"
 
+/**
+ * Section des avantages.
+ * Cette section met en avant les avantages de la chambre arbitrale du sport.
+ * Chaque avantage est affiché dans une carte interactive avec une icône de validation.
+ */
 export default function AdvantagesSection() {
+  // Liste des avantages
   const advantages = [
     {
       title: "Indépendance",
@@ -31,17 +37,20 @@ export default function AdvantagesSection() {
   return (
     <section className="py-16 bg-muted">
       <div className="container">
+        {/* Titre et description de la section */}
         <div className="section-title">
           <h2>Nos Avantages</h2>
           <p>Découvrez pourquoi la chambre arbitrale du sport est essentielle pour le règlement des litiges sportifs.</p>
         </div>
 
+        {/* Grille des avantages */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {advantages.map((advantage, index) => (
             <div
               key={index}
-              className=" card p-6 border rounded-lg transition-all duration-300 hover:border-green-500 hover:shadow-md hover:-translate-y-1 cursor-pointer"
+              className="card p-6 border rounded-lg transition-all duration-300 hover:border-green-500 hover:shadow-md hover:-translate-y-1 cursor-pointer"
             >
+              {/* Icône de validation et contenu */}
               <div className="flex items-start gap-4">
                 <div className="rounded-full bg-primary/10 p-2 mt-1">
                   <Check className="h-5 w-5 text-primary" />

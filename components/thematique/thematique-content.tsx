@@ -2,39 +2,45 @@ import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 
+/**
+ * Composant `ThematiqueContent` :
+ * Ce composant affiche une liste de thématiques liées à la Chambre Arbitrale du Sport.
+ * Chaque thématique est présentée avec un titre, une description, une liste de points clés et une image.
+ * Les thématiques alternent entre l'ordre de l'image et du texte pour un affichage dynamique.
+ */
 export default function ThematiqueContent() {
   const thematiques = [
-    {
-      title: "Règlement des Conflits Sportifs",
-      description: "La chambre arbitrale du sport règle les conflits et litiges à caractère sportif.",
-      image: "https://www.cnom.org.ma/sites/default/files/inline-images/50641911_2174771182841446_8814253569864630272_n.jpg",
-      points: [
-        "Structure juridictionnelle indépendante",
-        "Règlement des litiges sportifs",
-        "Mise en œuvre des décisions exécutoires",
-      ],
-    },
-    {
-      title: "Compétence et Procédure",
-      description: "Compétente pour se prononcer sur les différends sportifs.",
-      image: "https://stillmed.olympic.org/media/Images/OlympicOrg/News/2017/08/17/2017-08-17-Schooling-rio2016-inside-06.jpg?interpolation=lanczos-none&resize=2120:*",
-      points: [
-        "Clause compromissoire",
-        "Compromis conclu entre parties",
-        "Exclusion des litiges de dopage",
-      ],
-    },
-    {
-      title: "Cadre Légal",
-      description: "Basée sur l'article 44 du Dahir n° 1-10-150.",
-      image: "https://stillmed.olympic.org/media/Images/OlympicOrg/News/2017/08/17/2017-08-17-Schooling-rio2016-inside-05.jpg?interpolation=lanczos-none&resize=2120:*",
-      points: [
-        "Création au sein du CNOM",
-        "Règles de procédure réglementaires",
-        "Opposabilité des décisions",
-      ],
-    },
-  ]
+      {
+        title: "Règlement des Conflits Sportifs",
+        description: "La chambre arbitrale du sport règle les conflits et litiges à caractère sportif.",
+        image: "https://www.cnom.org.ma/sites/default/files/inline-images/50641911_2174771182841446_8814253569864630272_n.jpg",
+        points: [
+          "Structure juridictionnelle indépendante",
+          "Règlement des litiges sportifs",
+          "Mise en œuvre des décisions exécutoires",
+        ],
+      },
+      {
+        title: "Compétence et Procédure",
+        description: "Compétente pour se prononcer sur les différends sportifs.",
+        image: "https://stillmed.olympic.org/media/Images/OlympicOrg/News/2017/08/17/2017-08-17-Schooling-rio2016-inside-06.jpg?interpolation=lanczos-none&resize=2120:*",
+        points: [
+          "Clause compromissoire",
+          "Compromis conclu entre parties",
+          "Exclusion des litiges de dopage",
+        ],
+      },
+      {
+        title: "Cadre Légal",
+        description: "Basée sur l'article 44 du Dahir n° 1-10-150.",
+        image: "https://stillmed.olympic.org/media/Images/OlympicOrg/News/2017/08/17/2017-08-17-Schooling-rio2016-inside-05.jpg?interpolation=lanczos-none&resize=2120:*",
+        points: [
+          "Création au sein du CNOM",
+          "Règles de procédure réglementaires",
+          "Opposabilité des décisions",
+        ],
+      },
+  ];
 
   return (
     <section className="py-16">
@@ -86,6 +92,5 @@ export default function ThematiqueContent() {
         ))}
       </div>
     </section>
-  )
+  );
 }
-

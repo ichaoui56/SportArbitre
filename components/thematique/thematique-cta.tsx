@@ -1,5 +1,10 @@
 import Link from "next/link"
 
+/**
+ * Composant `ThematiqueCta` :
+ * Ce composant affiche un appel à l'action (CTA) pour encourager les utilisateurs à contacter la Chambre Arbitrale du Sport.
+ * Il est utilisé pour inciter les visiteurs à prendre des mesures supplémentaires.
+ */
 export default function ThematiqueCta() {
   return (
     <section className="py-16 bg-muted">
@@ -18,6 +23,6 @@ export default function ThematiqueCta() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 

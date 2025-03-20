@@ -1,5 +1,10 @@
 import Image from "next/image"
 
+/**
+ * Composant `ThematiqueBanner` :
+ * Ce composant affiche une bannière avec un titre et une description de la Chambre Arbitrale du Sport,
+ * accompagnée d'une image illustrative. Il est utilisé pour introduire la section thématique de manière visuelle.
+ */
 export default function ThematiqueBanner() {
   return (
     <section className="bg-muted py-16">

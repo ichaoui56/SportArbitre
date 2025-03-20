@@ -6,13 +6,15 @@ import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { useNavStore } from "@/store/nav-store"
 import Image from "next/image"
-import logo from "@/public/logo-s.png" 
+import logo from "@/public/logo-s.png"
+import logoDark from "@/public/logo-d.png" 
 import ThemeToggle from "../theme/theme-toggle"
 
 export default function Header() {
   const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
   const { isMenuOpen, toggleMenu, closeMenu } = useNavStore()
+  const [isDark, setIsDark] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,9 +50,15 @@ export default function Header() {
     >
       <div className="container mx-auto">
         <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center">
+          <div className="flex items-center mr-8">
             <Link href="/" className="flex items-center" onClick={closeMenu}>
-              <Image src={logo} alt="Logo" width={200} height={200} className="mr-2" />
+              <Image 
+                src={isDark ? logoDark : logo} 
+                alt="Logo" 
+                width={200} 
+                height={200} 
+                className="mr-2" 
+              />
             </Link>
           </div>
 
@@ -69,11 +77,11 @@ export default function Header() {
             ))}
           </nav>
           <div className="hidden md:flex">
-            <ThemeToggle />
+            <ThemeToggle onThemeChange={setIsDark} /> 
           </div>
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
-            <ThemeToggle />
+            <ThemeToggle onThemeChange={setIsDark} /> 
             <button
               type="button"
               className="ml-2 text-muted-foreground hover:text-foreground"
@@ -110,4 +118,3 @@ export default function Header() {
     </header>
   )
 }
-

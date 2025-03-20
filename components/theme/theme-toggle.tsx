@@ -2,20 +2,22 @@
 
 import { useEffect, useState } from "react"
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ onThemeChange }: { onThemeChange: (isDark: boolean) => void }) {
   const [isDark, setIsDark] = useState(false)
 
   useEffect(() => {
     const currentTheme = localStorage.getItem("theme") || "light"
     setIsDark(currentTheme === "dark")
     document.documentElement.classList.toggle("dark", currentTheme === "dark")
-  }, [])
+    onThemeChange(currentTheme === "dark")
+  }, [onThemeChange])
 
   const toggleTheme = () => {
     const newTheme = isDark ? "light" : "dark"
     setIsDark(!isDark)
     document.documentElement.classList.toggle("dark", !isDark)
     localStorage.setItem("theme", newTheme)
+    onThemeChange(!isDark)
   }
 
   return (
@@ -32,4 +34,4 @@ export default function ThemeToggle() {
       </div>
     </div>
   )
-} 
+}

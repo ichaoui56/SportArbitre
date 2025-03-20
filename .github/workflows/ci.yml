@@ -65,10 +65,9 @@ jobs:
           target: production
           build-args: |
             NODE_ENV=production
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
 
       # Add deployment steps here
       - name: Deploy to your environment
         run: |
           echo "Deployment would happen here"
+         

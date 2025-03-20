@@ -22,8 +22,8 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          
+      <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+
           <div className="flex min-h-screen flex-col">
             <Header />
             <main className="flex-1">{children}</main>
@@ -39,3 +39,4 @@ export default function RootLayout({
 
 
 import './globals.css'
+import ThemeToggle from "@/components/theme/theme-toggle"

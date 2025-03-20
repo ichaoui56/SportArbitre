@@ -1,20 +1,35 @@
 "use client"
-import { Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
 
-export function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
+import { useEffect, useState } from "react"
+
+export default function ThemeToggle() {
+  const [isDark, setIsDark] = useState(false)
+
+  useEffect(() => {
+    const currentTheme = localStorage.getItem("theme") || "light"
+    setIsDark(currentTheme === "dark")
+    document.documentElement.classList.toggle("dark", currentTheme === "dark")
+  }, [])
+
+  const toggleTheme = () => {
+    const newTheme = isDark ? "light" : "dark"
+    setIsDark(!isDark)
+    document.documentElement.classList.toggle("dark", !isDark)
+    localStorage.setItem("theme", newTheme)
+  }
 
   return (
-    <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary"
-      aria-label="Toggle theme"
-    >
-      <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-      <span className="sr-only">Toggle theme</span>
-    </button>
+    <div className="toggle-button-cover">
+      <div className="button r" id="button-3">
+        <input
+          type="checkbox"
+          className="checkbox"
+          checked={isDark}
+          onChange={toggleTheme}
+        />
+        <div className="knobs"></div>
+        <div className="layer"></div>
+      </div>
+    </div>
   )
-}
-
+} 

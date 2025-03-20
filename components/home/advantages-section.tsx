@@ -38,7 +38,10 @@ export default function AdvantagesSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {advantages.map((advantage, index) => (
-            <div key={index} className="card hover:translate-y-[-5px]">
+            <div
+              key={index}
+              className=" card p-6 border rounded-lg transition-all duration-300 hover:border-green-500 hover:shadow-md hover:-translate-y-1 cursor-pointer"
+            >
               <div className="flex items-start gap-4">
                 <div className="rounded-full bg-primary/10 p-2 mt-1">
                   <Check className="h-5 w-5 text-primary" />

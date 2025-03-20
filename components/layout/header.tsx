@@ -4,10 +4,10 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
-import { ThemeToggle } from "@/components/theme/theme-toggle"
 import { useNavStore } from "@/store/nav-store"
 import Image from "next/image"
 import logo from "@/public/logo-s.png" 
+import ThemeToggle from "../theme/theme-toggle"
 
 export default function Header() {
   const pathname = usePathname()

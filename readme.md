@@ -134,7 +134,6 @@ docker run -p 3000:3000 ichaoui57/sport-arbitre:latest
 📌 **Pourquoi ces technologies ?**
 
 - 🚀 **Next.js App Router** : Performant et moderne
-- 🔄 **Server Actions** : Gestion des soumissions côté serveur
 - 🎨 **Tailwind CSS** : Styling rapide et efficace
 - 🔒 **TypeScript** : Sécurisation du code
 - 🐳 **Docker** : Consistance entre environnements

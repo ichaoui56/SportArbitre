@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  sport-arbitre-prod:
+    build:
+      context: .
+      target: production
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: always
+
+volumes:
+  node_modules:

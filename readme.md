@@ -149,9 +149,17 @@ docker run -p 3000:3000 ichaoui57/sport-arbitre:latest
 
 ---
 
+## 👨‍💻 Suivi du projet
+
+🎯 Le projet est géré sur Jira :
+🔗 [Lien vers le projet Jira](https://jira.atlassian.com/jira/software/c/projects/SPA/boards/1?assignee=6144e023096e610069792b48&selectedIssue=SPA-1)
+
+---
+
 ## 👨‍💻 Auteur
 
 [![Ilyas Chaoui](https://img.shields.io/badge/Auteur-Ilyas%20Chaoui-blue?style=flat-square)](https://github.com/ichaoui56)
+🔗 [Portfolio](https://i-chaoui.vercel.app/)
 
 ---
 

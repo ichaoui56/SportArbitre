@@ -1,5 +1,4 @@
 import type React from "react"
-import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import Header from "@/components/layout/header"
@@ -8,13 +7,6 @@ import { ThemeProvider } from "@/components/theme/theme-provider"
 
 // Configuration de la police Inter avec le sous-ensemble "latin"
 const inter = Inter({ subsets: ["latin"] })
-
-// Métadonnées pour la page (utilisées pour le SEO)
-export const metadata: Metadata = {
-  title: "CAS - Centre d'Admission des Stagiaires",
-  description: "Plateforme pour les stagiaires en développement Next.js",
-  generator: 'v0.dev'
-}
 
 /**
  * Layout racine de l'application.
